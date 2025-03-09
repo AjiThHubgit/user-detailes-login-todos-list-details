@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 function Login() {
-  const { user, login } = useContext(AuthContext); // Get user & login function from context
+  const { user, login } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // ✅ Redirect to dashboard if already logged in
   useEffect(() => {
     if (user) {
       navigate("/dashboard");
@@ -31,7 +30,7 @@ function Login() {
     try {
       const success = await login(credentials.username, credentials.password);
       if (success) {
-        navigate("/dashboard"); // ✅ Redirect to dashboard
+        navigate("/dashboard");
       } else {
         setError("Invalid credentials. Please try again.");
       }

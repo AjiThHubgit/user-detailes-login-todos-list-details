@@ -13,13 +13,13 @@ export const AuthProvider = ({ children }) => {
   const login = (userData) => {
     localStorage.setItem("user", JSON.stringify(userData));
     setUser(userData);
-    navigate("/dashboard"); // Ensure navigation happens
+    navigate("/dashboard");
   };
 
   const logout = () => {
     localStorage.removeItem("user");
     setUser(null);
-    navigate("/login"); // Redirect to login after logout
+    navigate("/login");
   };
 
   return (

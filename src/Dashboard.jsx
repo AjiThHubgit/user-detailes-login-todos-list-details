@@ -9,12 +9,12 @@ const Dashboard = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   if (!user) {
-    return <p>Loading...</p>; // Handle cases where user is not yet set
+    return <p>Loading...</p>;
   }
 
   const handleLogout = () => {
-    logout(); // Call logout function from AuthContext
-    navigate("/login"); // Redirect to login after logout
+    logout();
+    navigate("/login");
   };
 
   return (
